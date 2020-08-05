@@ -1,0 +1,28 @@
+{% extends "manager/base.html" %}
+
+{% load static %}
+{% block content %}
+<hr>
+<br>
+<img src="{% static 'manager/logo.jpg' %}" style="float:left;width:27%;margin-right:35px;border-radius:10%">
+<p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus sem eu enim semper tincidunt. Integer 
+        suscipit ornare justo. Nullam malesuada nunc vitae eros interdum euismod. Suspendisse sit amet commodo erat. 
+        Donec rhoncus, mi eu pulvinar pharetra, quam libero hendrerit dolor, quis bibendum dolor arcu eu magna.
+        Vestibulum tristique augue sit amet molestie sollicitudin. Nulla vulputate vehicula pellentesque. Fusce
+        porttitor faucibus bibendum. Donec lobortis commodo nulla vel sodales. Nulla ultrices neque dignissim 
+        arcu interdum consequat. Aenean tortor lorem, consequat non metus sit amet, dapibus rhoncus sem. Donec 
+        et sagittis tellus, eu semper sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Nullam semper dolor nec tortor lobortis, a suscipit purus 
+        volutpat.
+
+    Morbi feugiat odio eros, ac finibus enim finibus vel. 
+    Praesent gravida fringilla ante, at suscipit magna ullamcorper id. 
+    Nullam eget metus at magna placerat blandit. In cursus eleifend augue, 
+    sed eleifend turpis placerat in. Nunc at dolor velit. Maecenas auctor, nibh ut lacinia porttitor,
+    diam nisi viverra sem, sit amet pharetra nisi mauris ut neque. In hac habitasse platea dictumst.
+    Quisque dictum leo sed sem ullamcorper, id sagittis eros mattis. Pellentesque commodo, orci id rutrum luctus,
+    neque mauris elementum risus, eu accumsan mi velit vel nunc. 
+<br>
+<h4 style="color:#4682B4">please login</h4><a href="{% url 'loginuser' %}" class="btn btn-primary"><i class="glyphicon glyphicon-user" style="font-weight:bold"></i> Login</a>
+{% endblock %}

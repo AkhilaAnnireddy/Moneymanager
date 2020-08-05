@@ -1,0 +1,28 @@
+{% extends "manager/base.html" %}
+
+{% block content %}
+
+{% if user.is_authenticated  %} 
+
+logged in as {{ user.username}}
+
+{{ error}}
+
+{{ income }}-
+<br>
+<br>
+
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-secondary">save</button>
+</form>
+<br>
+<form method="POST" action="{% url 'deleteincome' income.id %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-secondary">delete</button>
+    </form>  
+
+{% endif %}
+
+{% endblock %}

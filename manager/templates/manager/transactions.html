@@ -1,0 +1,23 @@
+{% extends "manager/base.html" %}
+{% block content %}
+
+
+{% if user.is_authenticated  %} 
+
+logged in as {{ user.username}}
+<br>
+<br>
+{% for transaction in transactions %}
+  {% if transaction in incomes %}
+    <a href="{% url 'viewincome' transaction.id %}">income-{{ transaction.date }}-{{ transaction }}-{{ transaction.amount }}</a>
+  {% else %}
+    <a href="{% url 'viewexpense' transaction.id  %}">expense-{{ transaction.date }}-{{ transaction }}-{{ transaction.amount }}</a>
+
+  {% endif %}
+
+
+
+ <br>
+ {% endfor %}
+ {% endif %}
+ {% endblock %}

@@ -1,0 +1,26 @@
+{% extends "manager/base.html" %}
+{% block content %}
+
+{% if user.is_authenticated  %} 
+
+logged in as {{ user.username}}
+<br>
+<br>
+
+<h1> Add ur expense </h1>
+<h2>{{ error }}</h2>
+
+<form method="POST" >
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit" class="btn btn-secondary">add</button>
+
+
+</form>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "manager/base.html" %}
+
+
+{% block content %}
+
+{% if user.is_authenticated  %} 
+
+Welcome {{ user.username}}
+
+<br>
+<br>
+
+    <h2>My Wallet</h2>
+    
+<br>
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">Income</div>
+            <div class="card-body">{{ income }}</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header">Expense</div>
+            <div class="card-body">{{ expense }}</div>
+        </div>
+    </div>
+    <div class="col">
+
+        <div class="card">
+                <div class="card-header">Balance</div>
+                <div class="card-body">{{ balance }}</div>
+        </div>
+    
+    
+    
+    
+    
+    </div>
+</div>
+
+<br>
+<br>
+
+    <button type="button" class="btn btn-outline-secondary"><a href="{% url 'updateincome' %}">add income</a></button>
+        <br>
+        <br>
+    <button type="button" class="btn btn-outline-secondary"><a href="{% url 'updateexpense' %}">add expense</a></button>
+        <br>
+        <br>
+    <button type="button" class="btn btn-outline-secondary"><a href="{% url 'transactions' %}">Transcations</a></button>
+
+{% endif %}
+
+{% endblock%}
